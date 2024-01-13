@@ -1,11 +1,10 @@
 use pra::{get_args, print_random_ascii, print_special_random_ascii, Args};
-use rand::thread_rng;
 
 fn main() {
-    let (mut tr, Args { n, s }) = (thread_rng(), get_args());
+    let Args { n, s } = get_args();
 
     match s {
-        false => print_random_ascii(&mut tr, n),
-        true => print_special_random_ascii(&mut tr, n),
+        false => print_random_ascii(n),
+        true => print_special_random_ascii(n),
     }
 }
